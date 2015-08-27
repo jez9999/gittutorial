@@ -3,15 +3,15 @@ Git is a distributed version control system.  This means that every person worki
 
 One important thing to note about distributed version control systems is that technically, no one repo is the "central" or "definitive" version.  Each repo can be thought of as a peer, equal to each other.  For example, this diagram could describe how Alice and Bob work together on a project using Git for source control:
 
-(diagram1)
+![Simple Git usage](git-diagram-1.png)
 
 Quite simply, they push and pull changes directly to and from each other's machines.  In practice this very rarely happens, but it illustrates the non-centralized nature of Git, and the fact that it is basically a sophisticated means for sending/receiving and applying patches between different machines.  This fundamental simplicity, though, is hardly a weakness, but a strength - when used with an effective workflow, Git can become a very powerful tool for good source control.
 
 Often, a service such as [Github](https://github.com/) or [Bitbucket](https://bitbucket.org/) is used to host a Git repo.  While these services provide a lot of convenience and an agreed central place to share code to, they are fundamentally no more "central" than any other clone of the repo; it's just that teams tend to agree that they will treat the version of the repo stored on the Github/Bitbucket/etc. server as definitive.  So this diagram could describe how Alice and Bob work together on a project through Github or Bitbucket:
 
-(diagram2)
+![Git usage through online services](git-diagram-2.png)
 
-However Alice could just as easily set up her Git configuration to pull updates from Bob's machine, rather than Github or Bitbucket.
+The two are sharing their codebase indirectly, using online services as a useful "middle man".  However, if desired, Alice could just as easily set up her Git configuration to pull updates from Bob's machine, rather than Github or Bitbucket.
 
 # Cloning a repo
 This document will assume that Github's copy is being considered by all team members as the definitive version of the repo being used for source control, and Github's repo will be called "public" whereas all other team members' local repos will be called "private".  The exact means for initializing this repo on a team member's machine depends on which tool is being used, but fundamentally it requires "cloning" the Github repo.  This means that a complete copy of the Github repo will be taken and stored locally on the user's machine.  The way to do this on the Git command line is:
