@@ -11,8 +11,7 @@ Quite simply, they push and pull changes directly to and from each other's machi
 
 However Alice could just as easily set up her Git configuration to pull updates from Bob's machine, rather than Github or Bitbucket.
 
--
-
+# Cloning a repository
 This document will assume that Github's copy is being considered by all team members as the definitive version of the repository being used for source control.  The exact means for initializing this repository on a team member's machine depends on which tool is being used, but fundamentally it requires "cloning" the Github repository.  This means that a complete copy of the Github repository will be taken and stored locally on the user's machine.  The way to do this on the Git command line is:
 
 ```
