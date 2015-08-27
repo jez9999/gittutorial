@@ -59,3 +59,11 @@ git merge [branchName]
 ... where [branchName] is the name of the local branch whose changes you want to merge into the branch you are currently working in.
 
 Another way to do merging in Git, which arguably results in a cleaner log history, is to first perform a `git rebase` on the current branch before merging.  Rebasing is beyond the scope of this document so please look in further resources to learn about this.
+
+# Further resources
+* Please fork this repo and feel free to make a pull request if you think this tutorial can be improved!
+* [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
+* [Git reference documentation](http://git-scm.com/docs/)
+* [Git community](http://git-scm.com/community)
+* [Atlassian Git tutorial](https://www.atlassian.com/git/tutorials/)
+* [Linus Torvalds on Git ('What would CVS not do?')](https://www.youtube.com/watch?v=4XpnKHJAok8)
