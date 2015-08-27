@@ -21,8 +21,8 @@ git clone https://github.com/[user]/[repoName].git
 
 ... where `[user]` is the Github username under which the repository is stored, and `[repoName]` is the name of the repository.  This command will create a directory with the same name as `[repoName]`.  Inside the directory will be a `.git` subdirectory containing the Git repository data, and a checkout of the currently active branch of the source repository (usually `master`).  The way to clone a repositry in Visual Studio is via a GUI of course but follows the same principle:
 
-(diagram3)
+![VS clone GUI](vs-clone.png)
 
 Once the repository is cloned from Github, Git will have automatically set it up to "push" to and "pull" from Github's repository.  This means that by default, a `git push` will try to update Github's repository with changes made to your local one, and a `git pull` will try to update your local repository with changes made to Github's one.  Again, Visual Studio follows the same principle with it's GUI allowing the user to "push" and "pull" changes:
 
-(diagram4)
+![VS push/pull GUI](vs-pushpull.png)
