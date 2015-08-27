@@ -48,7 +48,7 @@ git commit -m "First work on cool new feature."
 git checkout develop
 ```
 
-The above commands first switch to the local branch "coolNewFeature" (while creating that branch on-the-fly), add the modifications to the staging area so they will be included in the next commit, commits the changes with a brief log message, and switched back to the "develop" branch again.  Your codebase will then be back at the state of the "develop" branch before you had added the new functionality, but those changes will still be stored in the "coolNewFeature" branch which you can get back to with `git checkout coolNewFeature`.  Visual Studio's GUI for doing branching (and merging) refers to public and private branches as "published" and "unpublished" branches:
+The above commands first switch to the local branch "coolNewFeature" (while creating that branch on-the-fly), add the modifications to the staging area so they will be included in the next commit, commit the changes with a brief log message, and switch back to the "develop" branch again.  Your codebase will then be back at the state of the "develop" branch before you had added the new functionality, but those changes will still be stored in the "coolNewFeature" branch which you can get back to with `git checkout coolNewFeature`.  Visual Studio's GUI for doing branching (and merging) refers to public and private branches as "published" and "unpublished" branches:
 
 ![VS branches GUI](vs-branches.png)
 
