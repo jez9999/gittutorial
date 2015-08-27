@@ -25,7 +25,7 @@ git clone https://github.com/[user]/[repoName].git
 ![VS clone GUI](vs-clone.png)
 
 # Pushing and pulling changes
-Once the repo is cloned from Github, Git will have automatically set it up to "push" to and "pull" from Github's repo.  This means that by default, a `git push` will try to update Github's repo with changes made to your local one, and a `git pull` will try to update your local repo with changes made to Github's one.  Again, Visual Studio follows the same principle with it's GUI allowing the user to "push" and "pull" changes:
+Once the repo is cloned from Github, Git will have automatically set it up to "push" to and "pull" from Github's repo.  This means that by default, a `git push` will try to update Github's repo with changes made to your local one, and a `git pull` will try to update your local repo with changes made to Github's one.  Again, Visual Studio follows the same principle with its GUI allowing the user to "push" and "pull" changes:
 
 ![VS push/pull GUI](vs-pushpull.png)
 
