@@ -33,4 +33,24 @@ Rewrite ecc2932c66c848f849398ed47d9689903d2f0579 (14/1885)
 
 This time round, in the `--index-filter` command, we're using Git's `git rm` command as we're working with its staging cache and not the regular filesystem.  Telling Git to operate on the staging cache is also why we need to use the `--cached` argument with `git rm`.  In addition `--ignore-unmatch` allows `git rm` to succeed even if no files matched the file patch specified (ie. the directory didn't exist yet in the currently checked-out commit being worked on).
 
-TODO: deletion afterwards of "the backup in refs/original/ where git stores the original refs from the previous branch filter".
+# Cleaning up refs
+As this is potentially a dangerous operation, Git doesn't actually completely remove the old commits when you do this; it stores them in `.git/refs/original`.  Once you've inspected the results of the `filter-branch` operation and you're happy with them, you'll want to remove the backup "original" ref(s) with something like the following (in the case of the above example):
+
+```
+git update-ref -d refs/original/refs/heads/master
+```
+
+... for the master branch.  Or, if you did `filter-branch` on multiple refs/branches, and you want to wipe out all the backups:
+
+```
+git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
+```
+
+Note that this command will spit out `update-ref` "usage" info if there aren't actually any refs sitting in `refs/original`.
+
+So that removes the references to the old commits.  There's still one last thing potentially to do.  The data for those large files is still there in the `.git` directory.  In time it will automatically be garbage collected by Git but if you want to immediately see the reduced space taken up having deleted the large files from the repo's history, as again you may wish to do in the above example, you need to forcibly expire and prune the content with:
+
+```
+git reflog expire --expire=now --all
+git gc --prune=now
+```
