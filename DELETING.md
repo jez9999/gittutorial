@@ -1,3 +1,4 @@
+[Back to index](README.md)
 # Deleting file(s) from a repo's history
 Obviously deleting a file in a commit is straightforward, but deleting a file from the entire history of a Git repo may be necessary if the file is too big and you want it removed to reduce the repo size or to allow it to be checked into Github (for example) if the file is over 100MB big.
 
