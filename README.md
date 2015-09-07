@@ -75,9 +75,9 @@ Another way to do merging in Git, which arguably results in a cleaner log histor
 * [Deleting file(s) from a repo's history](DELETING.md)
 
 # Other resources
-* Please fork this repo and feel free to make a pull request if you think this tutorial can be improved!
-* [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
-* [Git reference documentation](http://git-scm.com/docs/)
-* [Git community](http://git-scm.com/community)
-* [Atlassian Git tutorial](https://www.atlassian.com/git/tutorials/)
-* [Linus Torvalds on Git ('What would CVS not do?')](https://www.youtube.com/watch?v=4XpnKHJAok8)
+- Please fork this repo and feel free to make a pull request if you think this tutorial can be improved!
+- [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
+- [Git reference documentation](http://git-scm.com/docs/)
+- [Git community](http://git-scm.com/community)
+- [Atlassian Git tutorial](https://www.atlassian.com/git/tutorials/)
+- [Linus Torvalds on Git ('What would CVS not do?')](https://www.youtube.com/watch?v=4XpnKHJAok8)
