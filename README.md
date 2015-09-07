@@ -1,4 +1,13 @@
 # Git tutorial
+- [Introduction](#introduction)
+- [Cloning a repo](#cloning-a-repo)
+- [Pushing and pulling changes](#pushing-and-pulling-changes)
+- [Typical Git workflow](#typical-git-workflow)
+- [Branching and merging](#branching-and-merging)
+- [Further tutorials](#further-tutorials)
+- [Other resources](#other-resources)
+
+# Introduction
 Git is a distributed version control system.  This means that every person working on a repository (repo) will have their own copy, which has either been created by themselves through `git init`, or "cloned" from another repo using `git clone`.
 
 One important thing to note about distributed version control systems is that technically, no one repo is the "central" or "definitive" version.  Each repo can be thought of as a peer, equal to each other.  For example, this diagram could describe how Alice and Bob work together on a project using Git for source control:
@@ -62,7 +71,10 @@ git merge [branchName]
 
 Another way to do merging in Git, which arguably results in a cleaner log history, is to first perform a `git rebase` on the current branch before merging.  Rebasing is beyond the scope of this document so please look in further resources to learn about this.
 
-# Further resources
+# Further tutorials
+* [Deleting file(s) from a repo's history](DELETING.md)
+
+# Other resources
 * Please fork this repo and feel free to make a pull request if you think this tutorial can be improved!
 * [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 * [Git reference documentation](http://git-scm.com/docs/)
