@@ -36,7 +36,7 @@ Firstly, install P4merge itself.  An installer that is compatible with 64-bit Wi
 
 In order to just install P4Merge and not other unnecessary components, when installing the "Perforce Visual Components for 64-bit systems", deselect every feature ("This feature will not be installed...") except for "Visual Merge Tool (P4Merge)":
 
-TODO: screenie here
+![P4Merge setup screen](images/p4merge-setup.png)
 
 Because of the preconfigured scripts that come with the Git bash shell, it is now easy to setup Git to use this P4Merge installation, assuming `p4merge.exe` can be reached from the current `PATH` variable (it should be added by default upon install).  Open up Git's global config settings again:
 ```
@@ -55,7 +55,7 @@ git difftool HEAD^
 ```
 Launch `p4merge` for the first changed file and you should see something like this:
 
-TODO: screenie here
+![P4Merge diff screen](images/p4merge-diff.png)
 
 This means you have successfully installed Perforce P4Merge as your merge and diff tool.  Of course, Git can be configured to use other merge and diff tools if desired.
 
