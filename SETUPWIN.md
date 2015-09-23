@@ -32,7 +32,8 @@ The built-in merge and diff tooling in Git is commandline-based and very basic. 
 
 Git comes with various merge and diff tools preconfigured, and if you're using one of these tools all you need to do is tell Git in a config setting which tool you're using.  One such tool is Perforce's P4Merge, which is highly recommended as it has a nice GUI and supports 3-way merging.
 
-Firstly, install P4merge itself.  An installer that is compatible with 64-bit Windows 7 or later can be downloaded here: TODO: download link (p4vinst64.exe)
+Firstly, install P4merge itself.  An installer that is compatible with 64-bit Windows 7 or later can be found in this repo at `setups/p4vinst64.exe`.
+
 In order to just install P4Merge and not other unnecessary components, when installing the "Perforce Visual Components for 64-bit systems", deselect every feature ("This feature will not be installed...") except for "Visual Merge Tool (P4Merge)".
 
 # Credentials
