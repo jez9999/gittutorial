@@ -27,6 +27,26 @@ Your initial config should look pretty empty.  You'll want to set it up to look 
 
 The `[push]` setting will mean that only the branch you're currently on gets pushed on a `git push` by default, which is almost always the desired behaviour, and the `[core]` setting will mean that `LF`-style newlines get checked into the repo, enforcing newline consistency.  The only editor that doesn't support these line endings is Windows Notepad, so never use that.  It's terrible, anyway.
 
+# Bash config
+It's probably worth creating a startup script for when you open the Bash shell, even if only to change directory to where you usually do your development (you don't want to manually navigate there every time).  The startup script is located in your home directory, accessible in Bash using the tilde character (`~`).  The file that used to get automatically executed was `.bashrc` but MinTTY now auto-executes `.bash_profile` instead.  To create a startup script, first get into your home directory in Bash and start editing your startup script:
+```
+cd ~
+vi .bash_profile
+```
+... then - assuming it's currently empty or doesn't exist - put something like the following in:
+```
+# Git bash startup script
+# Execute .bashrc if it exists
+if [ -f ~/.bashrc ]
+then
+	. ~/.bashrc
+fi
+
+# Change to development directory
+cd /c/Development/
+```
+This will mean that you start out in the `C:\Development\` directory every time you start the Bash shell (assuming `C:\Development\` is your main development directory in which you store your Git repos).
+
 # Merge and diff tools
 The built-in merge and diff tooling in Git is commandline-based and very basic.  It's a good idea to set up merge and diff tools for performing these operations in Git.
 
