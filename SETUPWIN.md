@@ -16,5 +16,5 @@ The default editor that will be used to edit this configuration is "Vim".  You'l
 Your initial config should look pretty empty.  You'll want to set it up to look something like this:
 ```
 [user]
-TODO: rest of config...
+	name = Joe Bloggs
 ```
