@@ -60,7 +60,16 @@ Launch `p4merge` for the first changed file and you should see something like th
 This means you have successfully installed Perforce P4Merge as your merge and diff tool.  Of course, Git can be configured to use other merge and diff tools if desired.
 
 # Credentials
-TODO: write...
+Whenever you push to or pull from a remote repository and need to authorize yourself to get permission, you will be prompted for a username and password.  This can get a little tiresome, but entering the password each time is a good idea to maintain security.  However, the username can be automatically supplied.
+
+Using Git's credentials setup, you can automatically provide the username to a remote repository based on its URL by editing the global config and adding something similar to the following:
+```
+[credential "https://github.com"]
+	username = yourGithubUsername
+[credential "https://bitbucket.org"]
+	username = yourBitbucketUsername
+```
+This will cause Git to automatically supply your username instead of prompting for it whenever necessary.  Note how you are able to supply different usernames automatically for different remote locations.
 
 # Interacting with Git
 Once Git for Windows is set up, there are a number of ways to interact with Git:
