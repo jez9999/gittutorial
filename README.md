@@ -73,6 +73,7 @@ Another way to do merging in Git, which arguably results in a cleaner log histor
 
 # Further tutorials
 - [Deleting file(s) from a repo's history](DELETING.md)
+- [Setting up Git for Windows](SETUPWIN.md)
 
 # Other resources
 - Please fork this repo and feel free to make a pull request if you think this tutorial can be improved!
