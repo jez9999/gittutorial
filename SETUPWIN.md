@@ -30,11 +30,34 @@ The `[push]` setting will mean that only the branch you're currently on gets pus
 # Merge and diff tools
 The built-in merge and diff tooling in Git is commandline-based and very basic.  It's a good idea to set up merge and diff tools for performing these operations in Git.
 
-Git comes with various merge and diff tools preconfigured, and if you're using one of these tools all you need to do is tell Git in a config setting which tool you're using.  One such tool is Perforce's P4Merge, which is highly recommended as it has a nice GUI and supports 3-way merging.
+Git bash shell comes with various merge and diff tools preconfigured, and if you're using one of these tools all you need to do is tell Git in a config setting which tool you're using.  One such tool is Perforce's P4Merge, which is highly recommended as it has a nice GUI and supports 3-way merging.
 
 Firstly, install P4merge itself.  An installer that is compatible with 64-bit Windows 7 or later can be found in this repo at `setups/p4vinst64.exe`.
 
-In order to just install P4Merge and not other unnecessary components, when installing the "Perforce Visual Components for 64-bit systems", deselect every feature ("This feature will not be installed...") except for "Visual Merge Tool (P4Merge)".
+In order to just install P4Merge and not other unnecessary components, when installing the "Perforce Visual Components for 64-bit systems", deselect every feature ("This feature will not be installed...") except for "Visual Merge Tool (P4Merge)":
+
+TODO: screenie here
+
+Because of the preconfigured scripts that come with the Git bash shell, it is now easy to setup Git to use this P4Merge installation, assuming `p4merge.exe` can be reached from the current `PATH` variable (it should be added by default upon install).  Open up Git's global config settings again:
+```
+git config -e --global
+```
+... and add the following:
+```
+[merge]
+	tool = p4merge
+```
+Only the merge tool needs to be specified; the diff tool will default to being the same as the merge tool if it isn't specified in the config.
+
+You can now test this setup out on a repo by using the P4Merge tool to look at the changes made to a file in the most recent revision.  Go into a Git repo that has at least a couple of commits in its history and run the command:
+```
+git difftool HEAD^
+```
+Launch `p4merge` for the first changed file and you should see something like this:
+
+TODO: screenie here
+
+This means you have successfully installed Perforce P4Merge as your merge and diff tool.  Of course, Git can be configured to use other merge and diff tools if desired.
 
 # Credentials
 TODO: write...
