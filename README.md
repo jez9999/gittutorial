@@ -72,8 +72,8 @@ git merge [branchName]
 Another way to do merging in Git, which arguably results in a cleaner log history, is to first perform a `git rebase` on the current branch before merging.  Rebasing is beyond the scope of this document so please look in further resources to learn about this.
 
 # Further tutorials
-- [Deleting file(s) from a repo's history](DELETING.md)
 - [Setting up Git for Windows](SETUPWIN.md)
+- [Deleting file(s) from a repo's history](DELETING.md)
 
 # Other resources
 - Please fork this repo and feel free to make a pull request if you think this tutorial can be improved!
