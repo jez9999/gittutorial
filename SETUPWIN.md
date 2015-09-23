@@ -21,7 +21,7 @@ Your initial config should look pretty empty.  You'll want to set it up to look 
 [push]
 	default = current
 [core]
-	autocrlf = input
+	autocrlf = true
 ```
 ... obviously putting your actual name and e-mail address into the `[user]` section.
 
