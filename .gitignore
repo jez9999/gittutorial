@@ -1,0 +1,32 @@
+# Build folders
+[Oo]bj/
+[Bb]in/
+
+# Temporary Visual Studio files
+*.suo
+*.user
+
+# ReSharper stuff
+_ReSharper.*
+
+# Potential difftool litter files
+*.orig
+
+# NuGet packages (removing these might cause some build servers to fail as explicit consent for automatic package downloading is required from
+# NuGet 2.0, so removing these is debatable; see: http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages
+#packages/
+
+# MonoDevelop
+*.pidb
+*.userprefs
+
+# Per-developer configuration files
+/connectionStrings.config
+
+# Ignore temporary files written by programs like Microsoft Word and Vim
+~$*
+*.swp
+*~
+
+# Others
+*.[Cc]ache
