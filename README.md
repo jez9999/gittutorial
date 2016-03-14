@@ -78,6 +78,7 @@ Another way to do merging in Git, which arguably results in a cleaner log histor
 - [Simple workflow example](WORKFLOWEXAMPLE.md)
 - [Deleting a branch](DELETEBRANCH.md)
 - [Deleting file(s) from a repo's history](DELETING.md)
+- [Creating and updating submodules](SUBMODULES.md)
 
 # Other resources
 - Please fork this repo and feel free to make a pull request if you think this tutorial can be improved!
