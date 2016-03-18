@@ -11,7 +11,7 @@ cd Dependencies
 git submodule add https://github.com/[username]/MyUtilities.git
 ```
 
-This will add a reference to the submodule in a file in the superproject's root dir called `.gitmodules`, and check out the contents of the repo/submodule `MyUtilities.git`.  As a side note, you should probably use `git clone --recursive` for any future clone you make of this superproject repo so that all submodules are recursively cloned as well as the superproject repo, or set up an alias in your global config to make the `clone` command do this by default.
+This will add a reference to the submodule in a file in the superproject's root dir called `.gitmodules`, and check out the contents of the repo/submodule `MyUtilities.git`.  As a side note, you should probably use `git clone --recursive` for any future clone you make of this superproject repo so that all submodules are recursively cloned as well as the superproject repo.
 
 If the `MyUtilities` project outputs a DLL which is to be copied into the `Dependencies` directory, you'll probably want to have source control ignore that DLL since the idea is to build the DLL from the submodule and copy it each time rather than to have it checked into source control, by adding something like the following to `.gitignore`:
 ```
@@ -34,13 +34,7 @@ Submodules are separate repos and need to be explicitly cloned as well as the re
 git clone --recursive [repoPath]
 ```
 
-This is very likely the behaviour you always want, so it might be worth setting it up as your default alias for `clone` in your global config file by adding:
-```
-[alias]
-	clone = clone --recursive
-```
-
-When you've already cloned a superproject and you haven't cloned its submodules, its submodule locations will probably just be empty directories.  When you need to clone its submodules (initializing them if necessary), use the following command:
+On the other hand, when you've already cloned a superproject and you haven't cloned its submodules, its submodule locations will probably just be empty directories.  When you need to clone its submodules (initializing them if necessary), use the following command:
 ```
 git submodule update --init --recursive
 ```
