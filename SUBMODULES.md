@@ -19,6 +19,7 @@ If the `MyUtilities` project outputs a DLL which is to be copied into the `Depen
 /Dependencies/MyUtilities.dll
 ```
 
+# Updating submodule references
 Once the changes made above are committed, you'll have successfully added a reference to the `MyUtilities` repo as a submobule.  However, git always holds a reference to a particular commit in a submodule (it's stored directly in git's object database) - you can't just reference "the latest commit in master" or something.  This means that if you add a new commit to `master` in the submodule repo, you'll also need to update the submodule reference to point to that new commit.  Assuming there are no other changes in the staging area and you just want to add one commit with the submodule reference updates, use:
 ```
 git submodule update --remote --merge
@@ -26,3 +27,20 @@ git commit -am "Updated submodule refs to latest changes."
 ```
 
 This fetches the latest changes from upstream in each submodule, merges them in, and checks out the latest revision of the submodule.  In other words, if the submodule currently points to the `master` branch, it will get the latest remote commit from `master`, merge it into the superproject's (this repo's) copy of the submodule repo, and update the reference to that latest commit.  This is probably what you want to do each time you update the submodule and want access to the changes made.
+
+# Cloning submodules
+Submodules are separate repos and need to be explicitly cloned as well as the repo that is their superproject.  When initially cloning the superproject, you can use the `--recursive` parameter to do this automatically for all submodules:
+```
+git clone --recursive [repoPath]
+```
+
+This is very likely the behaviour you always want, so it might be worth setting it up as your default alias for `clone` in your global config file by adding:
+```
+[alias]
+	clone = clone --recursive
+```
+
+When you've already cloned a superproject and you haven't cloned its submodules, its submodule locations will probably just be empty directories.  When you need to clone its submodules (initializing them if necessary), use the following command:
+```
+git submodule update --init --recursive
+```
