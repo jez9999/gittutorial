@@ -1,11 +1,11 @@
 # Git tutorial
-- [Introduction](#introduction)
-- [Cloning a repo](#cloning-a-repo)
-- [Pushing and pulling changes](#pushing-and-pulling-changes)
-- [Typical Git workflow](#typical-git-workflow)
-- [Branching and merging](#branching-and-merging)
-- [Further tutorials](#further-tutorials)
-- [Other resources](#other-resources)
+- [Introduction](#user-content-introduction)
+- [Cloning a repo](#user-content-cloning-a-repo)
+- [Pushing and pulling changes](#user-content-pushing-and-pulling-changes)
+- [Typical Git workflow](#user-content-typical-git-workflow)
+- [Branching and merging](#user-content-branching-and-merging)
+- [Further tutorials](#user-content-further-tutorials)
+- [Other resources](#user-content-other-resources)
 
 # Introduction
 Git is a distributed version control system.  This means that every person working on a repository (repo) will have their own copy, which has either been created by themselves through `git init`, or "cloned" from another repo using `git clone`.
