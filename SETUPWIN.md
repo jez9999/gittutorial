@@ -24,14 +24,22 @@ Your initial config should look pretty empty.  You'll want to set it up to look 
 [push]
 	default = current
 [core]
-	autocrlf = true
+	autocrlf = false
+	eol = lf
 	askpass =
 [alias]
 	clone = clone --recursive
 ```
 ... obviously putting your actual name and e-mail address into the `[user]` section.
 
-The `[push]` setting will mean that only the branch you're currently on gets pushed on a `git push` by default, which is almost always the desired behaviour, and the `[core]` setting will mean that `LF`-style newlines get checked into the repo, enforcing newline consistency.  The only editor that doesn't support these line endings is Windows Notepad, so never use that.  It's terrible, anyway.  The `[alias]` for the `clone` command adds `--recursive`, meaning any submodules' contents will get checked out at the same time as the repo being cloned; this is almost always desired behaviour.  The `askpass =` is not a typo; it disables the SSH shell's credentials popup and makes it prompt for the password on the commandline instead (this combines with disabling the Git Credential Manager, mentioned above, ensuring that credentials are simply prompted for on the commandline).
+The `[push]` setting will mean that only the branch you're currently on gets pushed on a `git push` by default, which is almost always the desired behaviour, and the `[core]` setting will mean that `LF`-style newlines get checked into the repo, enforcing newline consistency.  The only editor that doesn't support these line endings is Windows Notepad, so never use that.  It's terrible, anyway.  Note that each repo should also contain a `.gitattributes` file withthe line:
+```
+# Auto detect text files and perform LF normalization
+* text=auto
+```
+... to make Git normalize newlines.
+
+The `[alias]` for the `clone` command adds `--recursive`, meaning any submodules' contents will get checked out at the same time as the repo being cloned; this is almost always desired behaviour.  The `askpass =` is not a typo; it disables the SSH shell's credentials popup and makes it prompt for the password on the commandline instead (this combines with disabling the Git Credential Manager, mentioned above, ensuring that credentials are simply prompted for on the commandline).
 
 # Bash config
 It's probably worth creating a startup script for when you open the Bash shell, even if only to change directory to where you usually do your development (you don't want to manually navigate there every time).  The startup script is located in your home directory, accessible in Bash using the tilde character (`~`).  The file that used to get automatically executed was `.bashrc` but MinTTY now auto-executes `.bash_profile` instead.  To create a startup script, first get into your home directory in Bash and start editing your startup script:
