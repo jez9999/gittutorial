@@ -32,7 +32,7 @@ Your initial config should look pretty empty.  You'll want to set it up to look 
 ```
 ... obviously putting your actual name and e-mail address into the `[user]` section.
 
-The `[push]` setting will mean that only the branch you're currently on gets pushed on a `git push` by default, which is almost always the desired behaviour, and the `[core]` setting will mean that `LF`-style newlines get checked into the repo, enforcing newline consistency.  The only editor that doesn't support these line endings is Windows Notepad, so never use that.  It's terrible, anyway.  Note that each repo should also contain a `.gitattributes` file withthe line:
+The `[push]` setting will mean that only the branch you're currently on gets pushed on a `git push` by default, which is almost always the desired behaviour, and the `[core]` setting will mean that `LF`-style newlines get checked into the repo, enforcing newline consistency.  The only editor that doesn't support these line endings is Windows Notepad, so never use that.  It's terrible, anyway.  Note that each repo should also contain a `.gitattributes` file with the line:
 ```
 # Auto detect text files and perform LF normalization
 * text=auto
