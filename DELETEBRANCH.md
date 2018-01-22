@@ -18,7 +18,7 @@ Pruning deleted remote branches is probably something you'll want to do as well.
 git remote prune [remoteName]
 ```
 
-To avoid having to remember this command, you can setup a handy alias to prune branches for the remote name you usually (or always) use by putting a section like the following in your global Git config:
+To avoid having to remember this command, you can setup a handy alias to prune branches for the remote name you usually (or always) use by adding a section like the following to your global Git config:
 
 ```
 [alias]
