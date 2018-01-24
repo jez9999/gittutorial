@@ -32,14 +32,14 @@ $ git branch
 * master
   my-new-feature
 
-$ git remote prune origin
+$ git remote prune origin <-- (or git doprune)
 Pruning origin
 URL: https://myserver.com/DefaultCollection/_git/Repo
  * [pruned] origin/my-new-feature
 
 $ git branch
 * master
-  my-new-feature <-- non-tracking branch still here!
+  my-new-feature <-- (non-tracking branch still here!)
 
 $ git branch -d my-new-feature
 Deleted branch my-new-feature (was d175c79).
