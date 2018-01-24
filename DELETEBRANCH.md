@@ -25,7 +25,7 @@ To avoid having to remember this command, you can setup a handy alias to prune b
 	doprune = remote prune origin
 ```
 
-Note that while this will automatically prune *tracking* branches, you'll have to manually delete any local *non-tracking* branches you've setup to mirror the remote branch.  For example:
+Note that while this will automatically prune *tracking* branches when you run `git doprune`, you'll have to manually delete any local *non-tracking* branches you've setup to mirror the remote branch.  For example:
 
 ```
 $ git branch
