@@ -24,3 +24,26 @@ To avoid having to remember this command, you can setup a handy alias to prune b
 [alias]
 	doprune = remote prune origin
 ```
+
+Note that while this will automatically prune *tracking* branches, you'll have to manually delete any local *non-tracking* branches you've setup to mirror the remote branch.  For example:
+
+```
+$ git branch
+* master
+  my-new-feature
+
+$ git remote prune origin
+Pruning origin
+URL: https://myserver.com/DefaultCollection/_git/Repo
+ * [pruned] origin/my-new-feature
+
+$ git branch
+* master
+  my-new-feature <-- non-tracking branch still here!
+
+$ git branch -d my-new-feature
+Deleted branch my-new-feature (was d175c79).
+
+$ git branch
+* master
+```
