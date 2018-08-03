@@ -23,6 +23,8 @@ Your initial config should look pretty empty.  You'll want to set it up to look 
 	email = joebloggs@[yourDomain].com
 [push]
 	default = current
+[diff]
+	renameLimit = 5040
 [core]
 #	autocrlf = false
 #	eol = lf
@@ -33,6 +35,8 @@ Your initial config should look pretty empty.  You'll want to set it up to look 
 ... obviously putting your actual name and e-mail address into the `[user]` section.
 
 The `[push]` section will mean that only the branch you're currently on gets pushed on a `git push` by default, which is almost always the desired behaviour.
+
+The `[diff]` section will allow for more thorough log searching.
 
 The `autocrlf` and `eol` settings in the `[core]` section can be uncommented if you want `LF`-style newlines to get checked out of the repo even on Windows, enforcing newline consistency in your working tree.  The trouble is that even to this day, Windows Notepad (which you should never use, by the way) doesn't support Unix-style newlines, and nor do certain Windows UI dialogs, such as the ones used in Visual Studio for editing pre- and post-build scripts.  Unfortunately, this means that leaving the default `autocrlf` behaviour in place is probably the best idea in Windows, and 2-byte newlines will be used (although converted back to `LF`-style newlines when being checked back into the repo).
 
