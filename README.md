@@ -4,6 +4,7 @@
 - [Pushing and pulling changes](#user-content-pushing-and-pulling-changes)
 - [Typical Git workflow](#user-content-typical-git-workflow)
 - [Branching and merging](#user-content-branching-and-merging)
+- [DON'T use `git stash`!](#user-content-dont-use-git-stash)
 - [Further tutorials](#user-content-further-tutorials)
 - [Other resources](#user-content-other-resources)
 
@@ -72,6 +73,10 @@ git merge [branchName]
 ... where [branchName] is the name of the local branch whose changes you want to merge into the branch you are currently working in.
 
 Another way to do merging in Git, which arguably results in a cleaner log history, is to first perform a `git rebase` on the current branch before merging.  Rebasing is beyond the scope of this document so please look in further resources to learn about this.
+
+# DON'T use `git stash`!
+
+At least, I recommend avoiding the use of stash.  When you have temporary changes to store, just stage them all and perform a `checkout -b [meaningful-branch-name]`.  That way you can easily store your temporary changes with a meaningful branch name and commit them to that branch with a meaningful commit message so you'll remember what you were doing with them later.  I find that when I stash changes, I just forget what they were all about.  The stash stack tends to build up with sets of changes and you'll just forget what they were all about.  In addition, when you `git stash pop`, that set of changes will NOT be cleared off the stash stack if there was a conflict, so you have to clear it manually, which is rather annoying.  Just use local temporary branches to store temporary work, which is what Git is good at anyway!
 
 # Further tutorials
 - [Setting up Git for Windows](SETUPWIN.md)
