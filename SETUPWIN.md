@@ -88,8 +88,10 @@ git config -e --global
 ```
 [merge]
 	tool = p4merge
+[mergetool]
+        keepBackup = false
 ```
-Only the merge tool needs to be specified; the diff tool will default to being the same as the merge tool if it isn't specified in the config.
+Only the merge tool needs to be specified; the diff tool will default to being the same as the merge tool if it isn't specified in the config.  Note that the `mergetool.keepBackup` setting ensures that `.orig` files won't litter your filesystem whenever you need to resolve merge conflicts.
 
 You can now test this setup out on a repo by using the P4Merge tool to look at the changes made to a file in the most recent revision.  Go into a Git repo that has at least a couple of commits in its history and run the command:
 ```
