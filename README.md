@@ -84,6 +84,7 @@ A side benefit to this is that it's easier to store newly-added files too.  By d
 - [Setting up Git for Windows](SETUPWIN.md)
 - [Simple workflow example](WORKFLOWEXAMPLE.md)
 - [Deleting a branch](DELETEBRANCH.md)
+- [Pruning / housekeeping](PRUNING.md)
 - [Deleting file(s) from a repo's history](DELETING.md)
 - [Creating and updating submodules](SUBMODULES.md)
 
