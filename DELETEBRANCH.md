@@ -15,14 +15,14 @@ In the above, `[remoteName]` will likely be `origin`, as that is the default ali
 
 Pruning deleted remote branches is probably something you'll want to do as well.  When others delete a branch remotely as described above, you're unlikely to want to keep it around on your local repo.  A `git pull` will *not* cause their remote references to be deleted on your local repo.  To do that, you need to run:
 ```
-git remote prune [remoteName]
+git fetch --prune --prune-tags
 ```
 
-To avoid having to remember this command, you can setup a handy alias to prune branches for the remote name you usually (or always) use by adding a section like the following to your global Git config:
+Note that combining `--prune` with `--prune-tags` does exactly the same kind of pruning for local tags - removes them if they've been removed remotely.  To avoid having to remember this command, you can setup a handy alias to prune branches for the remote name you usually (or always) use by adding a section like the following to your global Git config:
 
 ```
 [alias]
-	doprune = remote prune origin
+	doprune = fetch --prune --prune-tags
 ```
 
 Note that while this will automatically prune *tracking* branches when you run `git doprune`, you'll have to manually delete any local *non-tracking* branches you've setup to mirror the remote branch.  For example:
@@ -32,10 +32,9 @@ $ git branch
 * master
   my-new-feature
 
-$ git remote prune origin <-- (or git doprune)
-Pruning origin
-URL: https://myserver.com/DefaultCollection/_git/Repo
- * [pruned] origin/my-new-feature
+$ git fetch --prune --prune-tags <-- (or git doprune)
+From https://bitbucket.org/my/repo
+ - [deleted]           (none)     -> origin/my-new-feature
 
 $ git branch
 * master
