@@ -44,3 +44,19 @@ $ git branch
 ```
 
 Note that using `git branch -d` instead of `git branch -D` here will keep things safe because the branch will only be deleted if git detects it's been merged.  If you really want to delete the branch anyway, you can use `git branch -D [branchname]`.
+
+A relatively safe automated way of deleting your local non-tracking branches is first to checkout `master`:
+
+```
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+```
+
+Then to run the following command from bash shell (it works even in Windows' git bash shell):
+
+```
+$ git branch --merged | egrep -v "(^\*|master|release)" | xargs git branch -d
+```
+
+This will soft-delete non-tracking branches (ie. only delete ones that are fully merged), except for ones that are filtered out by the `egrep` part; these are "long-lived" branches you want to keep around.  You may have a few of these - such as `release` in the above example - and of course you'll always have `master`, which should be kept around.
