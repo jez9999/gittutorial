@@ -87,6 +87,7 @@ A side benefit to this is that it's easier to store newly-added files too.  By d
 - [Pruning / housekeeping](PRUNING.md)
 - [Deleting file(s) from a repo's history](DELETING.md)
 - [Creating and updating submodules](SUBMODULES.md)
+- [Cherry-picking a commit](CHERRYPICK.md) (especially from another local repo!)
 
 # Other resources
 - Please fork this repo and feel free to make a pull request if you think this tutorial can be improved!
